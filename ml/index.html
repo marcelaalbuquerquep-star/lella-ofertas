@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lella Beauty · Conectar Mercado Livre</title>
+<style>
+body{margin:0;font:17px/1.5 -apple-system,system-ui,sans-serif;background:#f3e7e2;color:#2e1219;display:grid;place-items:center;min-height:100vh;padding:20px;box-sizing:border-box}
+.c{background:#fdf7f4;border-radius:18px;padding:24px;max-width:440px;width:100%;text-align:center;box-shadow:0 10px 30px -15px #8e214066}
+h1{font-size:1.3rem;margin:0 0 8px;color:#8e2140}
+code{display:block;word-break:break-all;background:#fff;border:2px dashed #8e2140;border-radius:12px;padding:14px;font-size:1rem;margin:16px 0}
+button{background:#8e2140;color:#fff;border:0;border-radius:999px;padding:14px 26px;font-size:1rem;font-weight:600}
+p{margin:6px 0;color:#7d5f66}
+</style></head><body><div class="c">
+<h1 id="t">Conexão autorizada ✅</h1>
+<p id="s">Copie o código abaixo e mande pro Claude:</p>
+<code id="code">—</code>
+<button id="b" type="button">Copiar código</button>
+<p id="ok"></p>
+</div>
+<script>
+var q = new URLSearchParams(location.search), c = q.get("code");
+if (c) { document.getElementById("code").textContent = c; }
+else { document.getElementById("t").textContent = "Nenhum código encontrado"; document.getElementById("s").textContent = "Abra de novo o link de autorização do Mercado Livre."; document.getElementById("b").hidden = true; }
+document.getElementById("b").onclick = function () {
+  navigator.clipboard.writeText(c).then(function(){ document.getElementById("ok").textContent = "Copiado! Agora cole no chat do Claude."; },
+  function(){ document.getElementById("ok").textContent = "Toque e segure no código pra copiar."; });
+};
+</script></body></html>
